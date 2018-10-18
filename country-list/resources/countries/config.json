@@ -1,0 +1,45 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "name",
+			"order": 0
+		},
+		"capital": {
+			"name": "capital",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "capital",
+			"order": 1
+		},
+		"population": {
+			"name": "population",
+			"type": "number",
+			"typeLabel": "number",
+			"required": true,
+			"id": "population",
+			"order": 2
+		},
+		"language": {
+			"name": "language",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "language",
+			"order": 3
+		},
+		"currency": {
+			"name": "currency",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "currency",
+			"order": 4
+		}
+	}
+}

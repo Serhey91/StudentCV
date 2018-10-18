@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <h3>Read panel</h3>
+    <div *ngIf="isLoaded">
+        <h6>Country: <b>{{Country.name}}</b></h6>
+        <h6>Langauge: <b>{{Country.language}}</b></h6>
+        <h6>Population:
+            <b>{{Country.population | number: '2.0-0'}} person. </b>
+            <small> (Info by {{getYear()}} year)</small></h6>
+        <h6>Currency: <b>{{Country.currency | uppercase}}</b></h6>
+        <h6>Capital: <b>{{Country.capital}}</b></h6>
+        <button class="btn btn-primary mt-2" (click)='onBack()'>Go back</button>
+
+    </div>
+    <div *ngIf="!isLoaded" class='text-center'>Loading...</div>
+</div>

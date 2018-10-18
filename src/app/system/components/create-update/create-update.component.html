@@ -1,0 +1,80 @@
+<div class="container-fluid">
+
+    <div *ngIf="isLoaded" class='mb-5'>
+        <h3 *ngIf="Country.id">Edit panel</h3>
+        <h3 *ngIf="!Country.id">Create panel</h3>
+        <form novalidate [formGroup]='FormGroup' (ngSubmit)='onSubmit(FormGroup)'>
+            <div class="form-group">
+                <label for="name">Country name</label>
+
+                <input type="text" autocomplete="off" class="form-control" id="name" formControlName="name">
+
+                <div *ngIf="FormGroup.get('name').hasError('required') && 
+                FormGroup.get('name').touched" class="alert alert-danger">
+                    Country name is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="population">Country population</label>
+
+                <input type="number" autocomplete="off" class="form-control" id="population" formControlName="population">
+                <div *ngIf="FormGroup.get('population').hasError('required') && 
+                FormGroup.get('population').touched" class="alert alert-danger">
+                    Population field is required
+                </div>
+                <div *ngIf="FormGroup.get('population').hasError('min') && 
+                FormGroup.get('population').touched" class="alert alert-danger">
+                    Population in your contry must be more than 4000
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Capital</label>
+
+                <input type="text" autocomplete="off" class="form-control" id="capital" formControlName="capital">
+
+                <div *ngIf="FormGroup.get('capital').hasError('required') && 
+                FormGroup.get('capital').touched" class="alert alert-danger">
+                    There must be some capital in country
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Language</label>
+
+                <input type="text" autocomplete="off" class="form-control" id="language" formControlName="language">
+
+                <div *ngIf="FormGroup.get('language').hasError('required') && 
+                FormGroup.get('language').touched" class="alert alert-danger">
+                    Please write native language of this country
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="population">Country currency</label>
+
+                <input type="text" autocomplete="off" class="form-control" id="currency" formControlName="currency">
+                <div *ngIf="FormGroup.get('currency').hasError('required') && 
+                FormGroup.get('currency').touched" class="alert alert-danger">
+                    Currency field is required
+                </div>
+                <div *ngIf="FormGroup.get('currency').hasError('minlength') && 
+                FormGroup.get('currency').touched" class="alert alert-danger">
+                    Currency must be more then 2 simbols
+                </div>
+                <div *ngIf="FormGroup.get('currency').hasError('maxlength') && 
+                FormGroup.get('currency').touched" class="alert alert-danger">
+                    Currency must be less then 4 simbols
+                </div>
+            </div>
+            <div *ngIf="FormMessage.text" class="alert alert-{{FormMessage.type}}">{{FormMessage.text}}</div>
+            <div *ngIf="Country.id">
+                <button class="btn btn-primary  mr-5" (click)='onBack()'>Go back</button>
+                <input type="submit" class="btn btn-primary" [disabled]="FormGroup.invalid" value="Edit Country">
+            </div>
+            <div *ngIf="!Country.id">
+                <button class="btn btn-primary mr-5" (click)='onBack()'>Go back</button>
+                <input type="submit" class="btn btn-primary " [disabled]="FormGroup.invalid" value="Add Country">
+            </div>
+        </form>
+
+    </div>
+    <div *ngIf="!isLoaded" class='text-center'>Loading...</div>
+</div>

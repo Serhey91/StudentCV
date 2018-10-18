@@ -1,0 +1,10 @@
+                       :host {
+                          display: flex;
+                          flex-grow: 1;
+                          flex-shrink: 1;
+                          overflow-y: auto;
+                          overflow-x: hidden;
+                          height: auto;
+                          padding: 20px;
+                          transition: all 2s ease;
+                      }

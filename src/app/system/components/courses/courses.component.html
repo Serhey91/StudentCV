@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <h3>My courses</h3>
+    <div class='flex mb-5' *ngFor="let item of coursesList">
+        <div class='flex__image' [style.background-image]="'url(' + item.img + ')'">
+        </div>
+        <div class='flex__description border-bottom border-secondary'>
+            <div class='flex-direction'>
+                <h5>{{item.name}}</h5>
+                <p class='cut'>{{item.description}}</p>
+                <ul>
+                    <li>{{item.lessons.length}} lessons</li>
+                </ul>
+            </div>
+            <a [routerLink]='["/system/courses", item.id]' class="btn btn-primary mb-3">Learn more...</a>
+        </div>
+    </div>
+</div>

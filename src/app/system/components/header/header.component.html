@@ -1,0 +1,35 @@
+<!-- div.container-fluid -->
+
+<div class='header-img col-2 align-items-center '><img src='../../../../favicon.ico '></div>
+<div class='col-10'>
+    <nav class='menu'>
+        <ul class="main-menu">
+
+            <li routerLinkActive='active' [routerLink]='"/system/home"'>
+                <a>
+                          Home page </a>
+            </li>
+            <li routerLinkActive='active' [routerLink]='"/system/courses"'>
+                <a>
+                         My education </a>
+            </li>
+            <li routerLinkActive='active' [routerLink]='"/system/countries"'>
+                <a>
+                         Countries list </a>
+            </li>
+            <li *ngIf="!auth.isAuth()" routerLinkActive='active' [routerLink]='"/system/login"'>
+                <a>
+                       Sign in </a>
+
+            </li>
+            <li *ngIf="auth.isAuth()" routerLinkActive='active' [routerLink]='"/system/login"'>
+
+                <a>
+                            Sign out </a>
+            </li>
+
+
+
+        </ul>
+    </nav>
+</div>

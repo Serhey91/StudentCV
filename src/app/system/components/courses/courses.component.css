@@ -1,0 +1,35 @@
+:host {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex__image {
+    background-size: 100% 100%;
+    background-position: center center;
+    width: 23%;
+}
+
+.flex__description {
+    width: 73%;
+    margin-left: 4%;
+}
+
+.flex-direction {
+    display: flex;
+    flex-direction: column;
+}
+
+.cut {
+    white-space: nowrap;
+    /* Запрещаем перенос строк */
+    overflow: hidden;
+    /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis;
+    /* Добавляем многоточие */
+}

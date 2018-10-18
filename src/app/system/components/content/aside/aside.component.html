@@ -1,0 +1,30 @@
+<nav>
+    <ul class="main-menu">
+
+        <li routerLinkActive='active' [routerLink]='"/system/home"'>
+            <a>
+              Home page <i class='fa fa-home icon'></i></a>
+        </li>
+        <li routerLinkActive='active' [routerLink]='"/system/courses"'>
+            <a>
+             My education <i class="fas fa-graduation-cap icon"></i></a>
+        </li>
+        <li routerLinkActive='active' [routerLink]='"/system/countries"'>
+            <a>
+             Countries list <i class='fa fa-flag icon'></i></a>
+        </li>
+        <li *ngIf="!auth.isAuth()" routerLinkActive='active' [routerLink]='"/system/login"'>
+            <a>
+           Sign in <i class='fa fa-sign-in-alt icon'></i></a>
+
+        </li>
+        <li *ngIf="auth.isAuth()" routerLinkActive='active' [routerLink]='"/system/login"'>
+
+            <a>
+                Sign out <i class='fa fa-sign-out-alt icon'></i></a>
+        </li>
+
+
+
+    </ul>
+</nav>

@@ -1,0 +1,24 @@
+.not-found {
+    background: linear-gradient(to right, rgb(236, 229, 212) 15%, rgb(199, 196, 196) 50%, rgb(160, 151, 151));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h3 {
+    color: red;
+    font-weight: 800;
+}
+
+h3,
+p {
+    font-size: 45px;
+}
+
+a {
+    font-size: 30px;
+    color: white;
+}

@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <h3>Delete panel</h3>
+    <div *ngIf="isLoaded">
+        <h6>Country: <b>{{CountryToDelete.name}}</b></h6>
+        <p>Are you sure you want to delete this country?</p>
+        <button class="btn btn-primary mr-4" (click)='onBack()'>Go back</button>
+        <button class="btn btn-warning" (click)='onDelete()'>Detele</button>
+        <div *ngIf="messageText.text" class="alert mt-2 alert-{{messageText.type}}">{{messageText.text}}</div>
+    </div>
+    <div *ngIf="!isLoaded" class='text-center'>Loading...</div>
+</div>
